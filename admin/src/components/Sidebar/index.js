@@ -10,27 +10,33 @@ const menuItems = [
 
 const Sidebar = () => {
   return (
-    <div>
-      <div>
-        <h1>eStore</h1>
+    <div className="sidebar-main">
+      <div className="p-4 m-4">
+        <h1 className="text-3xl font-semibold">eStore</h1>
       </div>
 
-      <ul>
+      <ul className="mx-auto text-lg flex flex-col">
         {menuItems.map((menuItem, index) => {
           return (
             <li key={index}>
               <Link href={menuItem.url}>
-                <div>{menuItem.text}</div>
+                <div className="sidebar-list-item">{menuItem.text}</div>
               </Link>
             </li>
           );
         })}
       </ul>
 
-      <div>
-        <div>
-          <Image height={50} width={50} src="/user.svg" alt="user avatar" />
-          <div>John Doe</div>
+      <div className="sidebar-user-card">
+        <div className="flex flex-row m-5">
+          <Image
+            height={50}
+            width={50}
+            src="/user.svg"
+            alt="user avatar"
+            className="border-gray-600 rounded-full border-2"
+          />
+          <div className="m-auto text-lg">John Doe</div>
         </div>
       </div>
     </div>
